@@ -19,7 +19,7 @@ body {
     overflow-y: auto;
 }
 
-/* 🌌 ვარსკვლავების ეფექტი */
+/* Star effect */
 .space-background {
     position: fixed;
     top: 0;
@@ -85,7 +85,6 @@ body {
 
 #rocket-container {
     position: absolute;
-    /* A rocket appears from the bottom left corner of the screen */
     bottom: -150px;
     left: -150px;
     z-index: 1001;
@@ -93,26 +92,33 @@ body {
 
 #rocket {
     font-size: 100px;
-    transform: rotate(15deg);
-    display: inline-block;
+    display: block;
+    position: relative;
+    transform: rotate(10deg);
+    transform-origin: center;
 }
 
 #fire {
     position: absolute;
-    top: 80px;
-    left: 40px;
+    bottom: -62px;
+    left: 46%;
+    transform: translateX(-50%) rotate(0deg);
     width: 30px;
-    height: 100px;
+    height: 120px;
     background: linear-gradient(to bottom, #fff, var(--neon), transparent);
     filter: blur(8px);
-    transform: rotate(0deg);
+
+    transform-origin: top center;
     animation: engineFire 0.1s infinite alternate;
     z-index: -1;
 }
 
 @keyframes engineFire {
+    from {
+        transform: translateX(-50%) rotate(10deg) scaleY(1);
+    }
     to {
-        transform: scaleY(1.5);
+        transform: translateX(-50%) rotate(10deg) scaleY(1.6);
         opacity: 0.8;
     }
 }
