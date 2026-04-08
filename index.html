@@ -25,12 +25,14 @@
     <h1 class="glitch-text">S.S. SEMANTIC — PROTOCOL 0</h1>
     <nav>
      <ul>
-      <li><a href="#logs">ჟურნალი</a></li>
-      <li><a href="#visuals">რადარი</a></li>
+      <li><a href="#bridge">ჟურნალი</a></li>
+      <li><a href="#logs">რადარი</a></li>
       <li><a href="#status">სტატუსი</a></li>
      </ul>
     </nav>
    </header>
+
+   <audio id="space-music" src="assets/interstellar.mp3" loop></audio>
 
    <main>
     <section id="logs" class="reveal">
@@ -45,6 +47,45 @@
        სემანტიკური ძრავები მუშაობს მაქსიმალურ სიმძლავრეზე — 110%. ერთადერთი
        გამოსავალი ჰიპერ-ნახტომის გააქტიურებაა. დედამიწა ჩვენი სამიზნე წერტილია.
        ვიწყებ ათვლას."
+      </p>
+     </div>
+    </section>
+
+    <section id="bridge" class="reveal">
+     <h2>🛰️ კავშირი ხომალდის ხიდთან</h2>
+     <div
+      class="dialogue-box"
+      style="
+       background: rgba(255, 255, 255, 0.05);
+       border-left: 3px solid #39ff14;
+       padding: 15px;
+       margin-bottom: 20px;
+       font-size: 0.9rem;
+      "
+     >
+      <p>
+       <strong>Semantic:</strong>
+       „კაპიტანო, შავმა ხვრელმა ხომალდის
+       <code>&lt;main&gt;</code>
+       სტრუქტურა დააზიანა. დედამიწაზე დასაბრუნებლად ყველა
+       <code>&lt;section&gt;</code>
+       უნდა დავასტაბილუროთ!“
+      </p>
+      <p>
+       <strong>Flex:</strong>
+       „ჩემი გამოთვლებით, მხოლოდ სემანტიკურად გამართული კოდი გაუძლებს
+       ჰიპერ-ნახტომის წნევას.
+       <code>&lt;header&gt;</code>
+       და
+       <code>&lt;footer&gt;</code>
+       ბლოკები უკვე იზოლირებულია.“
+      </p>
+      <p>
+       <strong>Layout:</strong>
+       „მე
+       <code>&lt;article&gt;</code>
+       ტეგში მოვაქციე გადარჩენის გეგმა, კოდი მზად არის. ნორა, შენს ბრძანებაზე
+       ვართ!“
       </p>
      </div>
     </section>
@@ -68,26 +109,30 @@
      <div class="stat-grid">
       <div>
        ჟანგბადი:
-       <span class="danger">0.4%</span>
+       <span class="ready">აღდგენილი</span>
       </div>
       <div>
        კორპუსი:
        <span class="danger">დეფორმირებული</span>
       </div>
       <div>
-       ენერგია:
+       სემანტიკა:
        <span class="ready">ONLINE</span>
       </div>
       <div>
-       მიზანი:
-       <span class="ready">EARTH (HOME)</span>
+       ეკიპაჟი:
+       <span class="ready">ACTIVE</span>
       </div>
      </div>
     </section>
 
     <section class="launch-zone reveal">
      <h3>🚀 ჰიპერ-ნახტომის ავტორიზაცია</h3>
-     <p class="pulse-text">შეიყვანეთ დედამიწის კოორდინატები გადასარჩენად:</p>
+     <p class="pulse-text">
+      შეიყვანეთ
+      <code>&lt;meta&gt;</code>
+      კოორდინატები გადასარჩენად:
+     </p>
      <input type="password" id="mission-code" placeholder="ACCESS CODE" />
      <br />
      <button type="button" id="launch-btn">INITIATE LAUNCH</button>
@@ -99,56 +144,6 @@
    </footer>
   </div>
 
-  <script>
-   const launchBtn = document.getElementById("launch-btn");
-   const site = document.getElementById("mission-control");
-   const spaceScene = document.getElementById("space-scene");
-   const rocketContainer = document.getElementById("rocket-container");
-   const codeInput = document.getElementById("mission-code");
-   const captainLog = document.getElementById("captain-log");
-
-   // ✍️ ტექსტის ბეჭდვის ანიმაცია (Typewriter)
-   function typeWriter(text, element, speed) {
-    let i = 0;
-    element.innerHTML = ""; // ვასუფთავებთ
-
-    function type() {
-     if (i < text.length) {
-      element.innerHTML += text.charAt(i);
-      i++;
-      setTimeout(type, speed);
-     }
-    }
-    type();
-   }
-
-   // საიტის ჩატვირთვისას იწყება ტექსტის ბეჭდვა
-   window.addEventListener("load", () => {
-    const fullText = captainLog.innerHTML;
-    typeWriter(fullText, captainLog, 50); // 50ms სიჩქარე
-   });
-
-   launchBtn.addEventListener("click", function () {
-    if (codeInput.value.trim() !== "") {
-     // 1. საიტი "ფეთქდება" და ქრება
-     site.classList.add("hyper-jump");
-
-     setTimeout(() => {
-      site.style.display = "none";
-      spaceScene.style.display = "block";
-
-      // 2. რაკეტა იწყებს 3-ეტაპიან ფრენას დედამიწისკენ
-      rocketContainer.classList.add("flyToEarth");
-     }, 1200);
-
-     setTimeout(() => {
-      alert("კეთილი იყოს თქვენი დაბრუნება! მისია წარმატებით დასრულდა. 🌍");
-      location.reload();
-     }, 9000);
-    } else {
-     alert("შეიყვანეთ კოორდინატები!");
-    }
-   });
-  </script>
+  <script src="script.js"></script>
  </body>
 </html>
