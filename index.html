@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="ka">
+ <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>S.S. Semantic | Final Approach</title>
+  <link rel="stylesheet" href="style.css" />
+ </head>
+ <body>
+  <div class="space-background">
+   <div class="stars"></div>
+  </div>
+
+  <div id="space-scene">
+   <div id="earth">🌍</div>
+   <div id="rocket-container">
+    <div id="rocket">🚀</div>
+    <div id="fire"></div>
+   </div>
+  </div>
+
+  <div id="mission-control">
+   <header class="reveal">
+    <div class="alert-blink">⚠️ კრიტიკული მდგომარეობა: სისტემური კოლაფსი</div>
+    <h1 class="glitch-text">S.S. SEMANTIC — PROTOCOL 0</h1>
+    <nav>
+     <ul>
+      <li><a href="#logs">ჟურნალი</a></li>
+      <li><a href="#visuals">რადარი</a></li>
+      <li><a href="#status">სტატუსი</a></li>
+     </ul>
+    </nav>
+   </header>
+
+   <main>
+    <section id="logs" class="reveal">
+     <h2>📡 კაპიტნის ჟურნალი: ვარსკვლავური დრო 4026.4</h2>
+     <div class="typing-container">
+      <p class="typing-text" id="captain-log">
+       "ნისლეულის მიღმა შავი ხვრელის გრავიტაცია გვწოვს... ეკიპაჟი
+       კრიო-კაფსულებშია. ჩემი ხმა შესაძლოა უკანასკნელი იყოს, რაც ამ სექტორიდან
+       ისმის. სემანტიკური ძრავები 110%-ზეა... ჰიპერ-ნახტომი ჩვენი ერთადერთი
+       ხსნაა. დედამიწა ასე შორს და თან ასე ახლოს არასდროს ყოფილა."
+      </p>
+     </div>
+    </section>
+
+    <section id="visuals" class="reveal">
+     <h2>🔭 გარე ვიზუალიზაცია</h2>
+     <div class="img-frame">
+      <img
+       src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=800"
+       alt="Cosmos"
+       class="zoom-img"
+      />
+     </div>
+     <p class="sub-text">
+      სექტორი: X-7. ობიექტი: ანდრომედას აფეთქებული ვარსკვლავი.
+     </p>
+    </section>
+
+    <section id="status" class="reveal">
+     <h2>📊 სისტემური ანალიზი</h2>
+     <div class="stat-grid">
+      <div>
+       ჟანგბადი:
+       <span class="danger">0.4%</span>
+      </div>
+      <div>
+       კორპუსი:
+       <span class="danger">დეფორმირებული</span>
+      </div>
+      <div>
+       ენერგია:
+       <span class="ready">ONLINE</span>
+      </div>
+      <div>
+       მიზანი:
+       <span class="ready">EARTH (HOME)</span>
+      </div>
+     </div>
+    </section>
+
+    <section class="launch-zone reveal">
+     <h3>🚀 ჰიპერ-ნახტომის ავტორიზაცია</h3>
+     <p class="pulse-text">შეიყვანეთ დედამიწის კოორდინატები გადასარჩენად:</p>
+     <input type="password" id="mission-code" placeholder="ACCESS CODE" />
+     <br />
+     <button type="button" id="launch-btn">INITIATE LAUNCH</button>
+    </section>
+   </main>
+
+   <footer>
+    <p>S.S. SEMANTIC TERMINAL | DESIGNED BY NORA | 2026</p>
+   </footer>
+  </div>
+
+  <script>
+   const launchBtn = document.getElementById("launch-btn");
+   const site = document.getElementById("mission-control");
+   const spaceScene = document.getElementById("space-scene");
+   const rocketContainer = document.getElementById("rocket-container");
+   const codeInput = document.getElementById("mission-code");
+   const captainLog = document.getElementById("captain-log");
+
+   // ✍️ ტექსტის ბეჭდვის ანიმაცია (Typewriter)
+   function typeWriter(text, element, speed) {
+    let i = 0;
+    element.innerHTML = ""; // ვასუფთავებთ
+
+    function type() {
+     if (i < text.length) {
+      element.innerHTML += text.charAt(i);
+      i++;
+      setTimeout(type, speed);
+     }
+    }
+    type();
+   }
+
+   // საიტის ჩატვირთვისას იწყება ტექსტის ბეჭდვა
+   window.addEventListener("load", () => {
+    const fullText = captainLog.innerHTML;
+    typeWriter(fullText, captainLog, 50); // 50ms სიჩქარე
+   });
+
+   launchBtn.addEventListener("click", function () {
+    if (codeInput.value.trim() !== "") {
+     // 1. საიტი "ფეთქდება" და ქრება
+     site.classList.add("hyper-jump");
+
+     setTimeout(() => {
+      site.style.display = "none";
+      spaceScene.style.display = "block";
+
+      // 2. რაკეტა იწყებს 3-ეტაპიან ფრენას დედამიწისკენ
+      rocketContainer.classList.add("flyToEarth");
+     }, 1200);
+
+     setTimeout(() => {
+      alert("კეთილი იყოს თქვენი დაბრუნება! მისია წარმატებით დასრულდა. 🌍");
+      location.reload();
+     }, 9000);
+    } else {
+     alert("შეიყვანეთ კოორდინატები!");
+    }
+   });
+  </script>
+ </body>
+</html>

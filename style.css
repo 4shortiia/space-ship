@@ -1,0 +1,335 @@
+:root {
+    --bg: #010208;
+    --neon: #00d2ff;
+    --danger: #ff003c;
+    --text: #e0e0e0;
+    --success: #39ff14;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    color: var(--text);
+    font-family: "Courier New", monospace; /* კოსმოსური შრიფტი */
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* 🌌 ვარსკვლავების ეფექტი */
+.space-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    background: radial-gradient(circle at center, #050a1d 0%, #010208 100%);
+    overflow: hidden;
+}
+
+/* ✨ შენი მოწოდებული ვარსკვლავების ეფექტი - სრულად ინტეგრირებული */
+.stars {
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background: transparent
+        url("https://images.unsplash.com/photo-1543722530-d2c3201371e7?q=80&w=2000")
+        repeat;
+    background-size: 500px;
+    opacity: 0.2; /* ოდნავ გავამუქე, რომ უკეთ გამოჩნდეს */
+    z-index: 1;
+    animation: starsRotate 180s linear infinite;
+}
+
+@keyframes starsRotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* 🚀 კოსმოსური სცენა */
+#space-scene {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+}
+
+#earth {
+    position: absolute;
+    top: 15%;
+    right: 15%;
+    font-size: 150px;
+    filter: drop-shadow(0 0 50px var(--neon));
+    animation: float 4s ease-in-out infinite alternate;
+}
+
+@keyframes float {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-10px);
+    }
+}
+
+#rocket-container {
+    position: absolute;
+    /* რაკეტა ჩნდება ეკრანის მარცხენა ქვედა კუთხიდან */
+    bottom: -150px;
+    left: -150px;
+    z-index: 1001;
+}
+
+#rocket {
+    font-size: 100px;
+    transform: rotate(45deg);
+}
+
+#fire {
+    position: absolute;
+    bottom: -60px;
+    left: 20px;
+    width: 30px;
+    height: 100px;
+    background: linear-gradient(to bottom, #fff, var(--neon), transparent);
+    filter: blur(8px);
+    animation: engineFire 0.1s infinite alternate;
+}
+
+@keyframes engineFire {
+    to {
+        transform: scaleY(1.5);
+        opacity: 0.8;
+    }
+}
+
+/* 🚀 რაკეტის ფრენის ანიმაცია დედამიწისკენ - 3 ეტაპიანი Approach */
+.flyToEarth {
+    animation: finalApproach 7.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes finalApproach {
+    0% {
+        transform: translate(0, 0) scale(1);
+    } /* ეკრანის გარეთ */
+    30% {
+        transform: translate(25vw, -25vh) scale(1.1);
+    } /* ეკრანზე შემოდის */
+    60% {
+        transform: translate(60vw, -55vh) scale(0.6);
+    } /* დედამიწისკენ */
+    100% {
+        transform: translate(78vw, -70vh) scale(0.05);
+        opacity: 0;
+    } /* შეხება და გაქრობა */
+}
+
+/* 🖥️ მართვის პანელი */
+#mission-control {
+    position: relative;
+    max-width: 850px;
+    margin: 60px auto;
+    background: rgba(0, 15, 40, 0.9);
+    border: 2px solid var(--neon);
+    padding: 50px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 50px rgba(0, 210, 255, 0.3);
+    z-index: 10;
+}
+
+/* სექციების გამოჩენა */
+.reveal {
+    animation: slideUp 1.2s ease-out forwards;
+    opacity: 0;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+header {
+    text-align: center;
+    border-bottom: 2px solid var(--neon);
+    padding-bottom: 20px;
+}
+.glitch-text {
+    color: #fff;
+    text-shadow: 0 0 10px var(--neon);
+}
+.alert-blink {
+    color: var(--danger);
+    animation: alert 0.6s infinite;
+    font-weight: bold;
+}
+@keyframes alert {
+    50% {
+        opacity: 0.2;
+    }
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+    padding: 15px 0;
+    margin: 0;
+}
+nav a {
+    color: var(--neon);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+}
+nav a:hover {
+    text-shadow: 0 0 10px var(--neon);
+}
+
+section {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 30px;
+    margin-top: 30px;
+    border-radius: 4px;
+    border-left: 4px solid var(--neon);
+}
+h2 {
+    color: var(--neon);
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    margin-top: 0;
+    letter-spacing: 1px;
+}
+
+/* ✨ კაპიტნის ჟურნალის ტექსტის გასტილვა (სურათიდან) */
+.typing-container {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 15px;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 210, 255, 0.2);
+    box-shadow: inset 0 0 10px rgba(0, 210, 255, 0.1);
+}
+
+.typing-text {
+    /* ნეონისფერი ტექსტი */
+    color: var(--neon);
+    text-shadow:
+        0 0 5px var(--neon),
+        0 0 2px #fff;
+    font-size: 1.05rem;
+    line-height: 1.5;
+    font-weight: bold;
+    border-right: 2px solid var(--neon); /* ბეჭდვის კურსორი */
+    white-space: normal;
+    overflow: hidden;
+    animation: blink-caret 0.75s step-end infinite;
+}
+
+@keyframes blink-caret {
+    50% {
+        border-color: transparent;
+    }
+}
+
+.zoom-img {
+    width: 100%;
+    max-width: 500px;
+    display: block;
+    margin: 15px auto;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 210, 255, 0.3);
+    transition: 1s;
+}
+.zoom-img:hover {
+    transform: scale(1.02);
+}
+
+.stat-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    text-align: center;
+}
+.danger {
+    color: var(--danger);
+    font-weight: bold;
+}
+.ready {
+    color: var(--success);
+    font-weight: bold;
+}
+
+.launch-zone {
+    text-align: center;
+    border: 1px dashed var(--neon);
+    margin-top: 40px;
+    padding: 30px;
+}
+.pulse-text {
+    animation: pulse 1s infinite;
+    color: var(--success);
+}
+@keyframes pulse {
+    50% {
+        opacity: 0.3;
+    }
+}
+input {
+    padding: 12px;
+    background: #000;
+    border: 1px solid var(--neon);
+    color: white;
+    width: 220px;
+    text-align: center;
+    font-family: inherit;
+}
+button {
+    padding: 12px 40px;
+    background: var(--neon);
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+button:hover {
+    background: #fff;
+    color: #000;
+    box-shadow: 0 0 20px #fff;
+}
+
+.hyper-jump {
+    animation: vanishes 1.4s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards;
+}
+
+@keyframes vanishes {
+    100% {
+        transform: scale(0.1) rotate(10deg);
+        filter: blur(50px);
+        opacity: 0;
+    }
+}
+
+footer {
+    text-align: center;
+    opacity: 0.3;
+    padding: 40px 0;
+    font-size: 0.8rem;
+}
