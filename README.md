@@ -166,7 +166,7 @@ ss-semantic/
 `</header>`-ის შემდეგ:
 
 ```html
-<audio id="space-music" src="assets/interstellar.mp3" loop></audio>
+<audio id="space-music" src="assets/audio/interstellar.mp3" loop></audio>
 ```
 
 > `loop` ატრიბუტი — მუსიკა უსასრულოდ მეორდება.
