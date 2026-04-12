@@ -264,6 +264,14 @@ h2 {
     }
 }
 
+.dialogue-box {
+    background: rgba(255, 255, 255, 0.05);
+    border-left: 3px solid #39ff14;
+    padding: 15px;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}
+
 .zoom-img {
     width: 100%;
     max-width: 500px;
@@ -349,4 +357,252 @@ footer {
     opacity: 0.3;
     padding: 40px 0;
     font-size: 0.8rem;
+}
+
+/* -------- CREW TABLE STYLES -------- */
+.crew-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--neon);
+    margin-top: 15px;
+}
+
+.crew-table thead {
+    background: rgba(0, 210, 255, 0.1);
+    border-bottom: 2px solid var(--neon);
+}
+
+.crew-table th {
+    padding: 12px;
+    text-align: left;
+    color: var(--neon);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.crew-table td {
+    padding: 12px;
+    border-bottom: 1px solid rgba(0, 210, 255, 0.2);
+    color: var(--text);
+}
+
+.crew-table tbody tr:hover {
+    background: rgba(0, 210, 255, 0.05);
+    transition: 0.3s;
+}
+
+.crew-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* -------- FORM STYLES -------- */
+.repair-form,
+.jump-form {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 210, 255, 0.2);
+}
+
+fieldset {
+    border: 1px solid var(--neon);
+    border-radius: 4px;
+    padding: 20px;
+    background: rgba(0, 210, 255, 0.02);
+}
+
+legend {
+    color: var(--neon);
+    padding: 0 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    color: var(--neon);
+    font-weight: bold;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="number"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px 12px;
+    background: #000;
+    border: 1px solid var(--neon);
+    color: var(--text);
+    font-family: inherit;
+    font-size: 0.95rem;
+    border-radius: 3px;
+    transition: 0.3s;
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--success);
+    box-shadow: 0 0 10px rgba(57, 255, 20, 0.3);
+}
+
+.form-group textarea {
+    resize: vertical;
+    font-size: 0.9rem;
+    color: var(--text);
+}
+
+.form-group input[type="range"] {
+    width: calc(100% - 50px);
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+#damage-display {
+    color: var(--success);
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+.checkbox-group {
+    background: rgba(0, 210, 255, 0.05);
+    padding: 15px;
+    border-radius: 3px;
+    border-left: 3px solid var(--neon);
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    text-transform: none;
+    font-weight: normal;
+    font-size: 0.9rem;
+}
+
+.checkbox-group label:last-child {
+    margin-bottom: 0;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+    cursor: pointer;
+    accent-color: var(--neon);
+}
+
+.radio-group {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    text-transform: none;
+    font-weight: normal;
+    font-size: 0.9rem;
+    margin-bottom: 0;
+}
+
+.radio-group input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+    cursor: pointer;
+    accent-color: var(--neon);
+}
+
+.submit-btn {
+    padding: 12px 30px;
+    background: var(--neon);
+    border: none;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    border-radius: 3px;
+    transition: 0.3s;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.submit-btn:hover {
+    background: var(--success);
+    box-shadow: 0 0 20px rgba(0, 210, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+.result-box {
+    background: rgba(0, 0, 0, 0.4);
+    border-left: 4px solid var(--success);
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 3px;
+    color: var(--success);
+    animation: slideUp 0.6s ease-out;
+}
+
+.result-box.hidden {
+    display: none;
+}
+
+.result-box p {
+    margin: 8px 0;
+}
+
+/* -------- RESPONSIVE DESIGN -------- */
+@media (max-width: 768px) {
+    .stat-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .crew-table {
+        font-size: 0.85rem;
+    }
+
+    .crew-table th,
+    .crew-table td {
+        padding: 8px;
+    }
+
+    #mission-control {
+        margin: 20px;
+        padding: 20px;
+    }
+
+    .form-group input[type="range"] {
+        width: calc(100% - 40px);
+    }
+
+    .radio-group {
+        gap: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
 }

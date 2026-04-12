@@ -38,44 +38,33 @@ ss-semantic/
 
 ## ნაბიჯი 2 — HTML-ის საფუძველი (`index.html`)
 
-გახსენი `index.html` და დაწერე დოკუმენტის სტრუქტურა.
+გახსენი `index.html` და დაწერე დოკუმენტის სტრუქტურა, შეიყვანე ! (ძახილის ნიშანი) და დააჭირე enter-ს.
 
 ```html
 <!doctype html>
-<html lang="ka"></html>
+<html lang="ka">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>S.S. Semantic | Final Approach</title>
+    </head>
+    <body>
+        <!-- ყველა ხილული კონტენტი აქ -->
+    </body>
+</html>
 ```
 
-**რატომ?**  
-`<!doctype html>` ეუბნება ბრაუზერს, რომ ეს HTML5 დოკუმენტია.  
-`lang="ka"` — ენა ქართულია.
+**რატომ?**
+
+- `<!doctype html>` — ეუბნება ბრაუზერს, რომ ეს HTML5 დოკუმენტია
+- `lang="ka"` — ენა ქართულია
+- `<meta charset="UTF-8">` — ქართული ასოები სწორად გამოჩნდეს
+- `<meta name="viewport">` — მობილურზე სწორი ზომა
+- `<link rel="stylesheet">` — CSS ფაილის მიბმა
 
 ---
 
-## ნაბიჯი 3 — `<head>` სექცია
-
-`<html>` ტეგის შიგნით დაწერე `<head>`:
-
-```html
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>S.S. Semantic | Final Approach</title>
-    <link rel="stylesheet" href="style.css" />
-</head>
-```
-
-**რა არის თითოეული?**
-
-| ტეგი                         | დანიშნულება                     |
-| ---------------------------- | ------------------------------- |
-| `<meta charset="UTF-8">`     | ქართული ასოები სწორად გამოჩნდეს |
-| `<meta name="viewport" ...>` | მობილურზე სწორი ზომა            |
-| `<title>`                    | ბრაუზერის ჩანართზე სახელი       |
-| `<link rel="stylesheet">`    | CSS ფაილის მიბმა                |
-
----
-
-## ნაბიჯი 4 — `<body>` — ხომალდის სხეული
+## ნაბიჯი 3 — `<body>` — ხომალდის სხეული
 
 `</head>`-ის შემდეგ გახსენი `<body>`:
 
@@ -87,7 +76,7 @@ ss-semantic/
 
 ---
 
-## ნაბიჯი 5 — კოსმოსური ფონი
+## ნაბიჯი 4 — კოსმოსური ფონი
 
 პირველი ელემენტი `<body>`-ში — ვარსკვლავიანი ფონი:
 
@@ -104,14 +93,16 @@ ss-semantic/
 
 ---
 
-## ნაბიჯი 6 — კოსმოსური სცენა (რაკეტა და დედამიწა)
+## ნაბიჯი 5 — კოსმოსური სცენა (რაკეტა და დედამიწა)
 
 ```html
 <div id="space-scene">
     <div id="earth">🌍</div>
     <div id="rocket-container">
-        <div id="rocket">🚀</div>
-        <div id="fire"></div>
+        <div id="rocket">
+            🚀
+            <div id="fire"></div>
+        </div>
     </div>
 </div>
 ```
@@ -128,7 +119,7 @@ ss-semantic/
 
 ---
 
-## ნაბიჯი 7 — მისიის კონტროლ-პანელი
+## ნაბიჯი 6 — მისიის კონტროლ-პანელი
 
 ეს მთავარი `<div>`-ია, სადაც ყველაფერი ხდება:
 
@@ -140,7 +131,7 @@ ss-semantic/
 
 ---
 
-## ნაბიჯი 8 — `<header>` (სათაური)
+## ნაბიჯი 7 — `<header>` (სათაური)
 
 `mission-control`-ის შიგნით:
 
@@ -170,7 +161,7 @@ ss-semantic/
 
 ---
 
-## ნაბიჯი 9 — აუდიო ფაილი
+## ნაბიჯი 8 — აუდიო ფაილი
 
 `</header>`-ის შემდეგ:
 
@@ -178,22 +169,23 @@ ss-semantic/
 <audio id="space-music" src="assets/interstellar.mp3" loop></audio>
 ```
 
-> ⚠️ შექმენი საქაღალდე `assets/` და ჩააგდე MP3 ფაილი სახელად `interstellar.mp3`.  
-> `loop` ატრიბუტი — მუსიკა მარადიულად მეორდება.
+> `loop` ატრიბუტი — მუსიკა უსასრულოდ მეორდება.
 
 ---
 
-## ნაბიჯი 10 — `<main>` სექცია
+## ნაბიჯი 9 — `<main>` სექცია
 
 ```html
-<main></main>
+<main>
+    <!-- ყველა <section> აქ -->
+</main>
 ```
 
 `<main>` — სემანტიკური ტეგი, რომელიც გვერდის მთავარ კონტენტს შეიცავს.
 
 ---
 
-## ნაბიჯი 11 — კაპიტნის ჟურნალი (`#logs`)
+## ნაბიჯი 10 — კაპიტნის ჟურნალი (`#logs`)
 
 `<main>`-ის შიგნით:
 
@@ -226,7 +218,7 @@ ss-semantic/
 
 ---
 
-## ნაბიჯი 12 — ხომალდის ხიდი (`#bridge`)
+## ნაბიჯი 11 — ხომალდის ხიდი (`#bridge`)
 
 ```html
 <section id="bridge" class="reveal">
@@ -273,17 +265,13 @@ ss-semantic/
 
 ---
 
-## ნაბიჯი 13 — გარე ვიზუალიზაცია (`#visuals`)
+## ნაბიჯი 12 — გარე ვიზუალიზაცია (`#visuals`)
 
 ```html
 <section id="visuals" class="reveal">
     <h2>🔭 გარე ვიზუალიზაცია</h2>
     <div class="img-frame">
-        <img
-            src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=800"
-            alt="Cosmos"
-            class="zoom-img"
-        />
+        <img src="assets/cosmos.jpeg" alt="Cosmos" class="zoom-img" />
     </div>
     <p class="sub-text">
         სექტორი: X-7. ობიექტი: ანდრომედას აფეთქებული ვარსკვლავი.
@@ -327,17 +315,253 @@ ss-semantic/
 </section>
 ```
 
-**კლასები:**
+**კლასების მნიშვნელობა:**
 
-| კლასი       | დანიშნულება                  |
-| ----------- | ---------------------------- |
-| `stat-grid` | CSS Grid — 2×2 ბადე          |
-| `ready`     | მწვანე ფერი — სტატუსი კარგია |
-| `danger`    | წითელი ფერი — საფრთხე        |
+| კლასი               | ფერი   | CSS                                              |
+| ------------------- | ------ | ------------------------------------------------ |
+| `class="stat-grid"` | —      | `display: grid; grid-template-columns: 1fr 1fr;` |
+| `class="ready"`     | მწვანე | `color: var(--success) #39ff14`                  |
+| `class="danger"`    | წითელი | `color: var(--danger) #ff003c`                   |
 
 ---
 
-## ნაბიჯი 15 — გაშვების ზონა (ყველაზე მნიშვნელოვანი!)
+### ნაბიჯი 15 — ეკიპაჟი მონაცემები (ცხრილი)
+
+```html
+<section id="crew-manifest" class="reveal">
+    <h2>👥 ეკიპაჟის მონაცემები</h2>
+    <table class="crew-table">
+        <thead>
+            <tr>
+                <th>სახელი</th>
+                <th>პოზიცია</th>
+                <th>სტატუსი</th>
+                <th>კრიო-კაპსულა</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Semantic AI</td>
+                <td>მთავარი ინტელექტი</td>
+                <td><span class="ready">აქტიური</span></td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>Flex Layout</td>
+                <td>სტრუქტურული ინჟინერი</td>
+                <td><span class="ready">აქტიური</span></td>
+                <td>კრიო-1</td>
+            </tr>
+            <tr>
+                <td>Grid Commander</td>
+                <td>ნავიგაციის სპეციალისტი</td>
+                <td><span class="ready">აქტიური</span></td>
+                <td>კრიო-2</td>
+            </tr>
+            <tr>
+                <td>Captain Stark</td>
+                <td>მისიის უფროსი</td>
+                <td><span class="danger">საფრთხის ქვეშ</span></td>
+                <td>კრიო-0 (VIP)</td>
+            </tr>
+            <tr>
+                <td>Dr. Quantum</td>
+                <td>ფიზიკოსი</td>
+                <td><span class="ready">აქტიური</span></td>
+                <td>კრიო-3</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+```
+
+**ცხრილის ელემენტები:**
+
+| ელემენტი                      | დანიშნულება        | CSS                                           |
+| ----------------------------- | ------------------ | --------------------------------------------- |
+| `<table class="crew-table">`  | ცხრილის კონტეინერი | border-collapse: collapse                     |
+| `<thead>`                     | ჯამური სტრიქონი    | background: rgba(0, 210, 255, 0.1)            |
+| `<th>`                        | სვეტის სათაური     | color: var(--neon); text-transform: uppercase |
+| `<tbody>`                     | მონაცემის რიგები   | —                                             |
+| `<tr>`                        | ცხრილის რიგი       | `:hover` background rgba(0, 210, 255, 0.05)   |
+| `<td>`                        | ცხრილის უჯრა       | padding: 12px; border-bottom                  |
+| `<span class="ready/danger">` | სტატუსის წერტილი   | მწვანე/წითალი ფერი                            |
+
+### ნაბიჯი 16 — სისტემების აღდგენის ფორმა
+
+```html
+<section id="systems-report" class="reveal">
+    <h2>🔧 სისტემების აღდგენის ფორმა</h2>
+    <form id="repair-form" class="repair-form">
+        <fieldset>
+            <legend>სისტემის აღდგენის რეგისტრაცია</legend>
+
+            <div class="form-group">
+                <label for="system-name">სისტემის სახელი:</label>
+                <select id="system-name" name="system" required>
+                    <option value="">-- აირჩიეთ სისტემა --</option>
+                    <option value="propulsion">მამოძრავებელი ძრავა</option>
+                    <option value="shielding">დაცვის ველი</option>
+                    <option value="comms">კავშირის სისტემა</option>
+                    <option value="navigation">ნავიგაციური სისტემა</option>
+                    <option value="life-support">სიცოცხლის მხარდამჭერი</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="damage-level">დაზიანების დონე:</label>
+                <input
+                    type="range"
+                    id="damage-level"
+                    name="damage"
+                    min="0"
+                    max="100"
+                    value="50"
+                />
+                <span id="damage-display">50%</span>
+            </div>
+
+            <div class="form-group">
+                <label for="priority">აღდგენის პრიორიტეტი:</label>
+                <select id="priority" name="priority" required>
+                    <option value="critical">კრიტიკული</option>
+                    <option value="high">მაღალი</option>
+                    <option value="medium">საშუალო</option>
+                    <option value="low">დაბალი</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="tech-notes">ტექნიკური შენიშვნები:</label>
+                <textarea
+                    id="tech-notes"
+                    name="notes"
+                    rows="4"
+                    placeholder="აღწერეთ პრობლემა..."
+                ></textarea>
+            </div>
+
+            <div class="form-group checkbox-group">
+                <label>
+                    <input type="checkbox" name="auto-repair" />
+                    ავტომატური აღდგენა
+                </label>
+                <label>
+                    <input type="checkbox" name="backup-power" />
+                    სარეზერვო ენერგია
+                </label>
+                <label>
+                    <input type="checkbox" name="alert-crew" />
+                    ეკიპაჟის გაფრთხილება
+                </label>
+            </div>
+
+            <button type="submit" class="submit-btn">
+                📤 აღდგენის დაწყება
+            </button>
+        </fieldset>
+    </form>
+</section>
+```
+
+**ფორმის ელემენტების დეტალი:**
+
+| ელემენტი                  | ატრიბუტი             | დანიშნულება                                            |
+| ------------------------- | -------------------- | ------------------------------------------------------ |
+| `<form>`                  | `id="repair-form"`   | JavaScript აქ წვდება form submit-ის დასამუშავებლად     |
+| `<fieldset>`              | —                    | ფორმის ელემენტების ჯგუფი (სემანტიკური)                 |
+| `<legend>`                | —                    | fieldset-ის სათაური                                    |
+| `<label>`                 | `for="system-name"`  | form element-ის ლეიბელი (accessibility)                |
+| `<select>`                | `required`           | სავალდებულო ველი                                       |
+| `<option>`                | `value="propulsion"` | dropdown ვარიანტი                                      |
+| `<input type="range">`    | `min="0" max="100"`  | slider (0-100)                                         |
+| `<textarea>`              | `rows="4"`           | მრავალხაზოვანი ტექსტი                                  |
+| `<input type="checkbox">` | `name="auto-repair"` | JavaScript აქ წვდება `.checked` თვისებით               |
+| `<button type="submit">`  | `class="submit-btn"` | ფორმის გაგზავნა (JavaScript აჰ слух form submit event) |
+
+### ნაბიჯი 17 — ჰიპერ-ნახტომის დიაგნოსტიკა ფორმა
+
+```html
+<section id="jump-diagnostics" class="reveal">
+    <h2>⚡ ჰიპერ-ნახტომის დიაგნოსტიკა</h2>
+    <form id="jump-form" class="jump-form">
+        <div class="form-group">
+            <label for="distance">მანძილი დედამიწამდე (ღია წელი):</label>
+            <input
+                type="number"
+                id="distance"
+                name="distance"
+                min="0"
+                max="10000"
+                value="5000"
+                step="100"
+            />
+        </div>
+
+        <div class="form-group">
+            <label for="jump-time">ნახტომის დრო (წამი):</label>
+            <input
+                type="number"
+                id="jump-time"
+                name="time"
+                min="1"
+                max="3600"
+                value="120"
+            />
+        </div>
+
+        <div class="form-group">
+            <label for="velocity">სიჩქარე (% სინათლის სიჩქარე):</label>
+            <input
+                type="number"
+                id="velocity"
+                name="velocity"
+                min="0"
+                max="999"
+                value="85"
+            />
+        </div>
+
+        <div class="form-group">
+            <label>ნახტომის კატეგორია:</label>
+            <div class="radio-group">
+                <label>
+                    <input type="radio" name="jump-type" value="warp" checked />
+                    ვარპ-ნახტომი
+                </label>
+                <label>
+                    <input type="radio" name="jump-type" value="hyperspace" />
+                    ჰიპერსივრცე
+                </label>
+                <label>
+                    <input type="radio" name="jump-type" value="quantum" />
+                    კვანტური ნახტომი
+                </label>
+            </div>
+        </div>
+
+        <button type="submit" class="submit-btn">🚀 ნახტომის სიმულაცია</button>
+    </form>
+
+    <div id="jump-result" class="result-box hidden">
+        <p><strong>სიმულაციის შედეგი:</strong></p>
+        <p id="result-text"></p>
+    </div>
+</section>
+```
+
+**ელემენტების დეტალი:**
+
+| ელემენტი                    | ატრიბუტი           | დანიშნულება                                                |
+| --------------------------- | ------------------ | ---------------------------------------------------------- |
+| `<input type="number">`     | `step="100"`       | increment 100-ით                                           |
+| `<input type="radio">`      | `name="jump-type"` | ერთი რადიო ფიქსირდება                                      |
+| `checked`                   | —                  | default selected radio                                     |
+| `class="radio-group"`       | —                  | CSS flexbox გაკიდებული                                     |
+| `class="result-box hidden"` | —                  | CSS `display: none` — JavaScript აჩვენებს submit-ის შემდეგ |
+| `id="result-text"`          | —                  | JavaScript აქ ჩასვამს გამოთვლის შედეგს                     |
+
+## ნაბიჯი 18 — გაშვების ზონა (ყველაზე მნიშვნელოვანი!)
 
 ```html
 <section class="launch-zone reveal">
@@ -353,6 +577,8 @@ ss-semantic/
 </section>
 ```
 
+**_ ავტორიზაციისთვის ნებისმიერი კოდი მუშაობს _**
+
 **ელემენტები:**
 
 | ელემენტი                  | დანიშნულება                                             |
@@ -365,13 +591,13 @@ ss-semantic/
 
 ---
 
-## ნაბიჯი 16 — დახურე `</main>` და დაამატე `<footer>`
+## ნაბიჯი 19 — დახურე `</main>` და დაამატე `<footer>`
 
 ```html
     </main>
 
     <footer>
-      <p>S.S. SEMANTIC TERMINAL | DESIGNED BY NORA | 2026</p>
+      <p>S.S. SEMANTIC TERMINAL | DESIGNED BY 10X | 2026</p>
     </footer>
 
   </div><!-- /mission-control -->
@@ -379,7 +605,7 @@ ss-semantic/
 
 ---
 
-## ნაბიჯი 17 — JS-ის მიბმა და დახურვა
+## ნაბიჯი 20 — JS-ის მიბმა და დახურვა
 
 ```html
   <script src="script.js"></script>
@@ -414,453 +640,24 @@ ss-semantic/
 
 ---
 
-## 🎨 CSS და JS-ის მიბმა — "WOW" ეფექტისთვის
+## 🎨 CSS-ის მიბმა — "WOW" ეფექტისთვის
 
 HTML მარტო ჩონჩხია. ვიზუალური ეფექტებისთვის საჭიროა:
 
-### `style.css` — ჩასვი ეს:
+### `style.css` დაკავშირება:
 
-```css
-:root {
-    --bg: #010208;
-    --neon: #00d2ff;
-    --bg-neon: #2298b3;
-    --danger: #ff003c;
-    --text: #e0e0e0;
-    --success: #39ff14;
-}
+## meta თეგში სათაურის ქვეშ ჩასვი ეს ლინკი
 
-html,
-body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    min-height: 100vh;
-    color: var(--text);
-    font-family: "Courier New", monospace; /* Space font */
-    overflow-x: hidden;
-    overflow-y: auto;
-}
-
-/* 🌌 ვარსკვლავების ეფექტი */
-.space-background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -2;
-    background: radial-gradient(circle at center, #050a1d 0%, #010208 100%);
-    overflow: hidden;
-}
-
-.stars {
-    position: absolute;
-    width: 200%;
-    height: 200%;
-    top: -50%;
-    left: -50%;
-    background: transparent
-        url("assets/nebula_stars_space_bright_glow_spiral_universe_galaxies_milky_way_4k_hd_space.jpg");
-    background-size: 500px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100% 100%;
-    opacity: 0.2;
-    z-index: 1;
-    animation: starsRotate 180s linear infinite;
-}
-
-@keyframes starsRotate {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-/* Space scene*/
-#space-scene {
-    display: none;
-    position: fixed;
-    inset: 0;
-    z-index: 1000;
-}
-
-#earth {
-    position: absolute;
-    top: 15%;
-    right: 15%;
-    font-size: 150px;
-    filter: drop-shadow(0 0 50px var(--neon));
-    animation: float 4s ease-in-out infinite alternate;
-}
-
-@keyframes float {
-    from {
-        transform: translateY(0);
-    }
-    to {
-        transform: translateY(-10px);
-    }
-}
-
-#rocket-container {
-    position: absolute;
-    /* A rocket appears from the bottom left corner of the screen */
-    bottom: -150px;
-    left: -150px;
-    z-index: 1001;
-}
-
-#rocket {
-    font-size: 100px;
-    transform: rotate(15deg);
-    display: inline-block;
-}
-
-#fire {
-    position: absolute;
-    top: 80px;
-    left: 40px;
-    width: 30px;
-    height: 100px;
-    background: linear-gradient(to bottom, #fff, var(--neon), transparent);
-    filter: blur(8px);
-    transform: rotate(0deg);
-    animation: engineFire 0.1s infinite alternate;
-    z-index: -1;
-}
-
-@keyframes engineFire {
-    to {
-        transform: scaleY(1.5);
-        opacity: 0.8;
-    }
-}
-
-/* Rocket Flight Animation Towards Earth - 3-Stage Approach */
-.flyToEarth {
-    animation: finalApproach 7.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-
-@keyframes finalApproach {
-    0% {
-        transform: translate(0, 0) scale(1);
-    } /* Offscreen */
-    30% {
-        transform: translate(25vw, -25vh) scale(1.1);
-    } /* Enters the screen */
-    60% {
-        transform: translate(60vw, -55vh) scale(0.6);
-    } /* Toward the Earth */
-    100% {
-        transform: translate(78vw, -70vh) scale(0.05);
-        opacity: 0;
-    } /* Touch and disappear */
-}
-
-code {
-    color: var(--neon);
-    background: rgba(0, 210, 255, 0.1);
-    padding: 2px 4px;
-}
-
-/* Control panel */
-#mission-control {
-    position: relative;
-    max-width: 850px;
-    margin: 60px auto;
-    background: rgba(0, 15, 40, 0.9);
-    border: 2px solid var(--neon);
-    padding: 50px;
-    backdrop-filter: blur(20px);
-    box-shadow: 0 0 50px rgba(0, 210, 255, 0.3);
-    z-index: 10;
-}
-
-/* Sections appear */
-.reveal {
-    animation: slideUp 1.2s ease-out forwards;
-    opacity: 0;
-}
-
-@keyframes slideUp {
-    from {
-        transform: translateY(50px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-header {
-    text-align: center;
-    border-bottom: 2px solid var(--neon);
-    padding-bottom: 20px;
-}
-.glitch-text {
-    color: #fff;
-    text-shadow: 0 0 10px var(--neon);
-}
-.alert-blink {
-    color: var(--danger);
-    animation: alert 0.6s infinite;
-    font-weight: bold;
-}
-@keyframes alert {
-    50% {
-        opacity: 0.2;
-    }
-}
-
-nav ul {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    list-style: none;
-    padding: 15px 0;
-    margin: 0;
-}
-nav a {
-    color: var(--neon);
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-}
-nav a:hover {
-    text-shadow: 0 0 10px var(--neon);
-}
-
-section {
-    background: rgba(255, 255, 255, 0.03);
-    padding: 30px;
-    margin-top: 30px;
-    border-radius: 4px;
-    border-left: 4px solid var(--neon);
-}
-h2 {
-    color: var(--neon);
-    text-transform: uppercase;
-    font-size: 1.2rem;
-    margin-top: 0;
-    letter-spacing: 1px;
-}
-
-/* Copy the text of the captain's log (from the image) */
-.typing-container {
-    background: rgba(0, 0, 0, 0.3);
-    padding: 15px;
-    border-radius: 4px;
-    border: 1px solid rgba(0, 210, 255, 0.2);
-    box-shadow: inset 0 0 10px rgba(0, 210, 255, 0.1);
-}
-
-.typing-text {
-    /* Neon text */
-    color: var(--neon);
-    text-shadow:
-        0 0 5px var(--bg-neon),
-        0 0 2px #fff;
-    font-size: 1.05rem;
-    line-height: 1.5;
-    font-weight: bold;
-    border-right: 2px solid var(--neon); /* Print cursor */
-    white-space: normal;
-    overflow: hidden;
-    animation: blink-caret 0.75s step-end infinite;
-}
-
-@keyframes blink-caret {
-    50% {
-        border-color: transparent;
-    }
-}
-
-.zoom-img {
-    width: 100%;
-    max-width: 500px;
-    display: block;
-    margin: 15px auto;
-    border-radius: 4px;
-    border: 1px solid rgba(0, 210, 255, 0.3);
-    transition: 1s;
-}
-.zoom-img:hover {
-    transform: scale(1.02);
-}
-
-.stat-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    text-align: center;
-}
-.danger {
-    color: var(--danger);
-    font-weight: bold;
-}
-.ready {
-    color: var(--success);
-    font-weight: bold;
-}
-
-.launch-zone {
-    text-align: center;
-    border: 1px dashed var(--neon);
-    margin-top: 40px;
-    padding: 30px;
-}
-.pulse-text {
-    animation: pulse 1s infinite;
-    color: var(--success);
-}
-@keyframes pulse {
-    50% {
-        opacity: 0.3;
-    }
-}
-input {
-    padding: 12px;
-    background: #000;
-    border: 1px solid var(--neon);
-    color: white;
-    width: 220px;
-    text-align: center;
-    font-family: inherit;
-}
-button {
-    padding: 12px 40px;
-    background: var(--neon);
-    border: none;
-    font-weight: bold;
-    cursor: pointer;
-    text-transform: uppercase;
-    margin-top: 15px;
-    transition: 0.3s;
-}
-button:hover {
-    background: #fff;
-    color: #000;
-    box-shadow: 0 0 20px #fff;
-}
-
-.hyper-jump {
-    animation: vanishes 1.4s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards;
-}
-
-@keyframes vanishes {
-    100% {
-        transform: scale(0.1) rotate(10deg);
-        filter: blur(50px);
-        opacity: 0;
-    }
-}
-
-footer {
-    text-align: center;
-    opacity: 0.3;
-    padding: 40px 0;
-    font-size: 0.8rem;
-}
-
-
-
----
-```
-
-### `script.js` — ჩასვი ეს:
-
-```JS
-
-const launchBtn = document.getElementById("launch-btn");
-const site = document.getElementById("mission-control");
-const spaceScene = document.getElementById("space-scene");
-const rocketContainer = document.getElementById("rocket-container");
-const codeInput = document.getElementById("mission-code");
-const captainLog = document.getElementById("captain-log");
-const music = document.getElementById("space-music");
-
-music.volume = 0.3;
-
-function typeWriter(text, element, speed) {
-    let i = 0;
-    element.innerHTML = "";
-    function type() {
-        if (i < text.length) {
-            element.innerHTML += text.charAt(i);
-            i++;
-            setTimeout(type, speed);
-        }
-    }
-    type();
-}
-
-window.addEventListener("load", () => {
-    const fullText = captainLog.innerText;
-    typeWriter(fullText, captainLog, 50);
-});
-
-launchBtn.addEventListener("click", function () {
-    if (codeInput.value.trim() !== "") {
-        // 🎵 მუსიკა პირდაპირ user gesture-ის კონტექსტში ირთვება
-        music.play().catch((error) => console.log("აუდიო ვერ გაეშვა:", error));
-
-        // 🔊 ხმის აწევა
-        let vol = music.volume;
-        let fadeIn = setInterval(() => {
-            if (vol < 0.9) {
-                vol = Math.min(vol + 0.05, 0.9);
-                music.volume = vol;
-            } else {
-                clearInterval(fadeIn);
-            }
-        }, 100);
-
-        site.classList.add("hyper-jump");
-        setTimeout(() => {
-            site.style.display = "none";
-            spaceScene.style.display = "block";
-            rocketContainer.classList.add("flyToEarth");
-        }, 2500);
-
-        // 9 წამიანი ფრენა და დასრულება
-        setTimeout(() => {
-            let volOut = music.volume;
-            let fadeOut = setInterval(() => {
-                if (volOut > 0.05) {
-                    volOut = Math.max(volOut - 0.05, 0.05);
-                    music.volume = volOut;
-                } else {
-                    music.pause();
-                    clearInterval(fadeOut);
-                }
-            }, 200);
-
-            alert("მისია წარმატებით დასრულდა! ეკიპაჟი უსაფრთხოდ არის. 🌍");
-            location.reload();
-        }, 12000);
-    } else {
-        alert("შეიყვანეთ კოდი!");
-    }
-});
-
-
----
-```
+<link rel="stylesheet" href="style.css" />
 
 ### 🏁 საბოლოო შემოწმება
 
 გახსენი `index.html` ბრაუზერში და შეამოწმე:
 
-- [ ] გვერდი შავ ფონზე იხსნება ვარსკვლავებით
+- [ ] გვერდი იხსნება მოძრავი ანიმაციური კოსმოსის სურათით
 - [ ] კაპიტნის ჟურნალი ბეჭდვის ეფექტით იწერება
-- [ ] გვერდის გადახვევისას სექციები გამოჩნდება
-- [ ] კოდის შეყვანა და LAUNCH — რაკეტა გაფრინდება
+- [ ] ნავიგაციაში გვერდებზე გადართვისას სექციები ჩნდება
+- [ ] კოდის შეყვანა და LAUNCH — ხომალდის გაშვება
 - [ ] მუსიკა გაშვებისთანავე ირთვება
 
 ### მისია შესრულებულია. ეკიპაჟი სახლშია.🌍
