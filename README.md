@@ -144,6 +144,9 @@ ss-semantic/
             <li><a href="#bridge">ჟურნალი</a></li>
             <li><a href="#logs">რადარი</a></li>
             <li><a href="#status">სტატუსი</a></li>
+            <li><a href="#crew-manifest">ეკიპაჟის მონაცემები</a></li>
+            <li><a href="#systems-report">სისტემის აღდგენის ფორმა</a></li>
+            <li><a href="#jump-diagnostics">ჰიპერ-ნახტომის დიაგნოსტიკა</a></li>
         </ul>
     </nav>
 </header>
