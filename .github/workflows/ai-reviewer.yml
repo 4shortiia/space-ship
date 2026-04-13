@@ -28,12 +28,12 @@ jobs:
                   pip install google-generativeai requests
 
             - name: Run AI Reviewer
-              env:
-                  GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-                  GITHUB_REPOSITORY: ${{ github.repository }}
-                  GITHUB_EVENT_PATH: ${{ github.event_path }}
-              run: python scripts/ai-reviewer.py
+        env:
+            GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }} # <-- ეს ხაზი აკავშირებს გასაღებს
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            GITHUB_REPOSITORY: ${{ github.repository }}
+            GITHUB_EVENT_PATH: ${{ github.event_path }}
+        run: python scripts/ai-reviewer.py
 
 permissions:
     contents: read
