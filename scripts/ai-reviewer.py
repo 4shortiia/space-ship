@@ -153,7 +153,7 @@ def main():
         return
 
     genai.configure(api_key=gemini_key)
-    model = genai.GenerativeModel("gemini-2.5-pro") 
+    model = genai.GenerativeModel("gemini-1.5-flash")
 
     # --- 2. GET CONTEXT ---
     repo_full_name = os.getenv("GITHUB_REPOSITORY")
